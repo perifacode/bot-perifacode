@@ -1,6 +1,6 @@
 const { Client, RichEmbed } = require('discord.js')
 const client = new Client()
-const getEvents = require('./events')
+const getEvents = require('./src/js/events')
 
 require('dotenv/config')
 
