@@ -1,0 +1,1 @@
+worker: src/index.js
