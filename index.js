@@ -1,7 +1,7 @@
-const { Client, RichEmbed } = require('discord.js')
+const { Client } = require('discord.js')
 const client = new Client()
-const getEvents = require('./src/js/events')
-
+const getEvents = require('./commands/events')
+const greetings = require('./commands/greeting')
 require('dotenv/config')
 
 const base_url = "https://api.sympla.com.br/public/v3/events"
@@ -11,26 +11,24 @@ client.on('ready', () => {
 })
 
 
-
-
+// !eventos - Mostra o próximo evento do perifaCode
 client.on('message', msg => {
   if(msg.content === '!eventos') {
     getEvents(base_url)
     .then(nextEvent => {
-      const embed = new RichEmbed()
-      .setTitle("Próximos eventos do perifaCode")
-      .setDescription(`
-        📄 Nome: ${nextEvent.name}
-  
-        📅 Data: ${nextEvent.start_date}
-  
-        🏙 Local: ${nextEvent.address.name}
-  
-        ✅ Inscrições abertas em: ${nextEvent.url}
-      `)
-      msg.channel.send(embed)
+      msg.channel.send(nextEvent)
+    .catch(err => {
+      msg.channel.send('Não há próximos eventos por enquanto, mas fique de olho 😉')
+    })
     })
   }
 })
+
+
+// Saudações (Bom dia, boa tarde e boa noite)
+client.on('message', msg => {
+  greetings(msg)
+})
+
 
 client.login(process.env.TOKEN_DISCORD)
