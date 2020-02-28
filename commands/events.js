@@ -1,7 +1,18 @@
 process.binding('http_parser').HTTPParser = require('http-parser-js').HTTPParser;
 const axios = require('axios')
-require('dotenv/config')
 const { RichEmbed } = require('discord.js')
+require('dotenv/config')
+
+
+function formatDate(date) {
+        dia  = date.getDate().toString(),
+        diaF = (dia.length == 1) ? '0'+dia : dia,
+        mes  = (date.getMonth()+1).toString(), //+1 pois no getMonth Janeiro começa com zero.
+        mesF = (mes.length == 1) ? '0'+mes : mes,
+        anoF = date.getFullYear();
+    return diaF+"/"+mesF+"/"+anoF;
+}
+
 module.exports = function eventsPerifacode(url) {
   return axios.get(url, {
     headers: {
@@ -20,7 +31,7 @@ module.exports = function eventsPerifacode(url) {
           .setDescription(`
             📌 - ${nextEvent.name}
       
-            📅 - ${nextEvent.start_date}
+            📅 - ${formatDate(eventDate)}
       
             🏙 - ${nextEvent.address.name}
       
