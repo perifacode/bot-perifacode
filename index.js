@@ -1,7 +1,9 @@
 const { Client } = require('discord.js')
-const client = new Client()
-const getEvents = require('./commands/events')
-const greetings = require('./commands/greeting')
+const client = new Client(),
+getEvents = require('./commands/events'),
+greetings = require('./commands/greeting'),
+coursesAndBooks = require('./commands/coursesAndBooks'),
+help = require('./commands/help')
 require('dotenv/config')
 
 const base_url = "https://api.sympla.com.br/public/v3/events"
@@ -13,6 +15,9 @@ client.on('ready', () => {
 
 // !eventos - Mostra o próximo evento do perifaCode
 client.on('message', msg => {
+  greetings(msg)
+  coursesAndBooks(msg)
+  help(msg)
   if(msg.content === '!eventos') {
     getEvents(base_url)
     .then(nextEvent => {
@@ -23,12 +28,5 @@ client.on('message', msg => {
     })
   }
 })
-
-
-// Saudações (Bom dia, boa tarde e boa noite)
-client.on('message', msg => {
-  greetings(msg)
-})
-
 
 client.login(process.env.TOKEN_DISCORD)
