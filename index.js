@@ -1,8 +1,9 @@
-const { Client, MessageEmbed } = require('discord.js')
-const client = new Client()
-const getEvents = require('./commands/events')
-const greetings = require('./commands/greeting')
-const coursesAndBooks = require('./commands/coursesAndBooks')
+const { Client } = require('discord.js')
+const client = new Client(),
+getEvents = require('./commands/events'),
+greetings = require('./commands/greeting'),
+coursesAndBooks = require('./commands/coursesAndBooks'),
+help = require('./commands/help')
 require('dotenv/config')
 
 const base_url = "https://api.sympla.com.br/public/v3/events"
@@ -16,6 +17,7 @@ client.on('ready', () => {
 client.on('message', msg => {
   greetings(msg)
   coursesAndBooks(msg)
+  help(msg)
   if(msg.content === '!eventos') {
     getEvents(base_url)
     .then(nextEvent => {
