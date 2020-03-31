@@ -35,19 +35,19 @@ Neste exemplo estamos utilizando o comando SSH para clonar o repositório localm
 
 ### Configure o repositório principal do perifaCode BOT
 
-Dentro do seu repositório local
+Dentro do seu repositório local:
 
 ```bash
 cd bot-perifacode
 ```
 
-Configure o remote `upstream` com o repositório principal do perifaCode BOT
+Configure o remote `upstream` com o repositório principal do perifaCode BOT:
 
 ```
 git remote add upstream git@github.com:perifacode/bot-perifacode.git
 ```
 
-Agora seu repositório deve ter um remote `upstream` configurado, para testar rode o seguinte comando
+Agora seu repositório deve ter um remote `upstream` configurado, para testar rode o seguinte comando:
 
 ```
 > git remote
@@ -60,7 +60,8 @@ Se você teve este mesmo resultado o remote já está configurado.
 ### Crie uma branch para as alterações que deseja fazer
 
 Reserve a branch `master` para estar sincronizada com a `master` principal.
-Para atualizar sua `master` local com a `master` principal rode os comandos
+
+Para atualizar sua `master` local com a `master` principal rode os comandos:
 
 ```
 git checkout master
@@ -70,7 +71,7 @@ git pull upstream master
 Com isto alteramos para a branch `master` local e fizemos um pull da branch `master` principal.
 Importante salientar que caso você tenha alterações não commitadas você não conseguirá trocar de branch, lide com suas alterações primeiro (faça os commits ou apague as mudanças).
 
-A partir da `master` atualizada crie sua branch nova
+A partir da `master` atualizada crie sua branch nova:
 
 ```
 git checkout -b <NOME DA MINHA BRANCH>
@@ -80,7 +81,7 @@ A partir de sua nova branch faça as suas alterações.
 
 ### Faça um pull request com as suas alterações
 
-Com suas alterações finalizadas faça um push delas para seu repositório
+Com suas alterações finalizadas faça um push delas para seu repositório:
 
 ```
 git push origin <NOME DA MINHA BRANCH>
@@ -102,3 +103,5 @@ Quando seu pull request receber as aprovações necessárias ele será mergeado 
 É uma boa ideia abrir um pull request o quando antes for possível pois um pull request representa o inicio de uma discussão, o quando antes você obtiver feedbacks a respeito de suas modificações menos alterações serão necessárias no futuro.
 
 Um pull request não necessariamente representa a solução final e não precisa estar completo para ser submetido.
+
+Mantenha sempre sua branch sincronizada com a `master` principal, para evitar conflitos na hora do pull request, os conflitos precisam necessariamente serem resolvidos antes do approve dos organizadores.
