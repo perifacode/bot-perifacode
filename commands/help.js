@@ -11,6 +11,15 @@ module.exports = function help(msg) {
         **!eventos** - Mostra o próximo evento que iremos fazer. (Presencial ou online);
 
         **!livros e !cursos** - Link para o nosso repositório com livros e cursos gratuitos;
+
+        **!site** - Link para o site da nossa comunidade;
+
+        **!social** - Lista de links para as nossas redes sociais;
+
+        **!github** - Link para nossos repositórios do Github;
+
+        **!bot** - Link para contribuir com nosso robôzinho;
+        
       `)
       .setFooter(`Criado com 💛 pela comunidade perifaCode`)
       .setColor('#fff200')
