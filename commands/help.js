@@ -1,8 +1,8 @@
-const { RichEmbed } = require ('discord.js')
+const { MessageEmbed } = require ('discord.js')
 
 module.exports = function help(msg) {
   if(msg.content === '!help' || msg.content === '!ajuda' || msg.content === '!comandos') {
-    embed = new RichEmbed()
+    embed = new MessageEmbed()
       .setTitle('🤖 Comandos do nosso bot 🤖')
       .setDescription(`
 

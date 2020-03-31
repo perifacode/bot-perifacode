@@ -1,6 +1,6 @@
 process.binding('http_parser').HTTPParser = require('http-parser-js').HTTPParser;
 const axios = require('axios')
-const { RichEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js')
 require('dotenv/config')
 
 
@@ -26,7 +26,7 @@ module.exports = function eventsPerifacode(url) {
       actualDate = new Date()
       console.log(nextEvent)
       if (eventDate > actualDate) {
-        return new RichEmbed()
+        return new MessageEmbed()
           .setTitle("Próximos eventos do perifaCode")
           .setDescription(`
             📌 - ${nextEvent.name}
@@ -37,6 +37,8 @@ module.exports = function eventsPerifacode(url) {
       
             ✅ Inscrições abertas em: ${nextEvent.url}
           `)
+          .setFooter(`Criado com 💛 pela comunidade perifaCode`)
+          .setColor('#fff200')
       } else {
         return 'Não há próximos eventos por enquanto, mas fique de olho 😉'
       }
