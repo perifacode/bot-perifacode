@@ -16,6 +16,7 @@ Abaixo estão algumas coisas que você precisa fazer para poder ajudar na constr
 - Conhecimento básico da biblioteca [Discord.js](https://discord.js.org/)
 - Ter o [Node.js](https://nodejs.org/) instalado na máquina
 - Ter uma conta no [Developer Portal](https://discordapp.com/developers/) do Discord.
+- Dar uma olhada no nosso [guia de contribuição](https://github.com/perifacode/bot-perifacode/blob/master/CONTRIBUTING.md)
 
 Para aprender o funcionamento básico da criação de bots usando a biblioteca discord.js, recomendo [essa playlist](https://www.youtube.com/playlist?list=PLj8eMR1hXlcK4eKN8vurLSx7BtteEQuGc).
 
