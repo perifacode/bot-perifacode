@@ -114,3 +114,5 @@ dist
 .yarn/build-state.yml
 .pnp.*
 
+# vs workspace
+.vscode
