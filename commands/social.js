@@ -1,8 +1,8 @@
-const { MessageEmbed } = require('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 module.exports = function social(msg) {
-  if(msg.content === '!social') {
-    embed = new MessageEmbed()
+  if (msg.content === '!social') {
+    const embed = new MessageEmbed()
       .setTitle('Redes Sociais da Comunidade')
       .setDescription(`
         **Twitter** - http://twitter.com/perifacode
@@ -11,8 +11,8 @@ module.exports = function social(msg) {
         **Facebook** - http://facebook.com/perifacode
         **Github** - http://github.com/perifacode
       `)
-      .setFooter(`Criado com 💛 pela comunidade perifaCode`)
-      .setColor('#fff200')
-    msg.channel.send(embed)
+      .setFooter('Criado com 💛 pela comunidade perifaCode')
+      .setColor('#fff200');
+    msg.channel.send(embed);
   }
-}
+};

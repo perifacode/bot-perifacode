@@ -1,8 +1,8 @@
-const { MessageEmbed } = require ('discord.js')
+const { MessageEmbed } = require('discord.js');
 
 module.exports = function help(msg) {
-  if(msg.content === '!help' || msg.content === '!ajuda' || msg.content === '!comandos') {
-    embed = new MessageEmbed()
+  if (msg.content === '!help' || msg.content === '!ajuda' || msg.content === '!comandos') {
+    const embed = new MessageEmbed()
       .setTitle('🤖 Comandos do nosso bot 🤖')
       .setDescription(`
 
@@ -21,8 +21,8 @@ module.exports = function help(msg) {
         **!bot** - Link para contribuir com nosso robôzinho;
         
       `)
-      .setFooter(`Criado com 💛 pela comunidade perifaCode`)
-      .setColor('#fff200')
-    msg.channel.send(embed)
+      .setFooter('Criado com 💛 pela comunidade perifaCode')
+      .setColor('#fff200');
+    msg.channel.send(embed);
   }
-}
+};
