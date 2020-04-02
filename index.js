@@ -8,6 +8,7 @@ github = require('./commands/github')
 social = require('./commands/social')
 bot = require('./commands/bot')
 site = require('./commands/site')
+mentor = require('./commands/mentor')
 require('dotenv/config')
 
 const base_url = "https://api.sympla.com.br/public/v3/events"
@@ -42,6 +43,7 @@ client.on('message', msg => {
   social(msg)
   bot(msg)
   site(msg)
+  mentor(msg)
   if(msg.content === '!eventos') {
     getEvents(base_url)
     .then(nextEvent => {
