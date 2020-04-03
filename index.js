@@ -1,7 +1,7 @@
 const { Client, MessageEmbed } = require('discord.js');
 
 const client = new Client();
-const getEvents = require('./commands/events');
+const events = require('./commands/events');
 const greetings = require('./commands/greeting');
 const coursesAndBooks = require('./commands/coursesAndBooks');
 const help = require('./commands/help');
@@ -12,7 +12,6 @@ const site = require('./commands/site');
 const mentor = require('./commands/mentor');
 require('dotenv/config');
 
-const baseUrl = 'https://api.sympla.com.br/public/v3/events';
 
 client.on('ready', () => {
   console.log(`Logged in  as ${client.user.tag}`);
@@ -34,7 +33,6 @@ client.on('guildMemberAdd', (member) => {
   channel.send(embed);
 });
 
-// !eventos - Mostra o próximo evento do perifaCode
 client.on('message', (msg) => {
   greetings(msg);
   coursesAndBooks(msg);
@@ -44,15 +42,7 @@ client.on('message', (msg) => {
   bot(msg);
   site(msg);
   mentor(msg);
-  if (msg.content === '!eventos') {
-    getEvents(baseUrl)
-      .then((nextEvent) => {
-        msg.channel.send(nextEvent)
-          .catch(() => {
-            msg.channel.send('Não há próximos eventos por enquanto, mas fique de olho 😉');
-          });
-      });
-  }
+  events(msg);
 });
 
 client.login(process.env.TOKEN_DISCORD);
