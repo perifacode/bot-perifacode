@@ -3,6 +3,7 @@ const axios = require('axios');
 const { MessageEmbed } = require('discord.js');
 require('dotenv/config');
 
+const baseUrl = 'https://api.sympla.com.br/public/v3/events';
 
 function formatDate(date) {
   const dia = date.getDate().toString();
@@ -13,7 +14,7 @@ function formatDate(date) {
   return `${diaF}/${mesF}/${anoF}`;
 }
 
-module.exports = function eventsPerifacode(url) {
+function eventsPerifacode(url) {
   return axios.get(url, {
     headers: {
       s_token: process.env.TOKEN_SYMPLA,
@@ -42,4 +43,17 @@ module.exports = function eventsPerifacode(url) {
       return 'Não há próximos eventos por enquanto, mas fique de olho 😉';
     })
     .catch((err) => err);
+}
+
+
+module.exports = function getEvents(msg) {
+  if (msg.content === '!eventos') {
+    eventsPerifacode(baseUrl)
+      .then((nextEvent) => {
+        msg.channel.send(nextEvent)
+          .catch(() => {
+            msg.channel.send('Não há próximos eventos por enquanto, mas fique de olho 😉');
+          });
+      });
+  }
 };
