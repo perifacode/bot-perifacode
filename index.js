@@ -9,7 +9,7 @@ const github = require('./commands/github');
 const social = require('./commands/social');
 const bot = require('./commands/bot');
 const site = require('./commands/site');
-const mentor = require('./commands/mentor');
+const mentor = require('./commands/mentor/mentor');
 require('dotenv/config');
 
 
