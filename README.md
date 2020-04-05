@@ -29,6 +29,12 @@ Para aprender o funcionamento básico da criação de bots usando a biblioteca d
 
 ---
 
+## Licença
+
+Este repositório usa a licença [MIT](LICENSE.md)
+
+---
+
 Qualquer dúvida entrar em contato com o organizador [Guilherme Vieira](http://twitter.com/gitlherme).
 
 
