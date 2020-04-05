@@ -8,7 +8,6 @@ module.exports = function mentor(msg) {
   if (msg.content === '!mentorear') {
     msg.react('🎉');
     msg.react('🎈');
-
     const emojiList = roles.map(role => role.emoji);
     const guildMember = msg.member;
     const filter = (reaction, member) => {
@@ -16,7 +15,6 @@ module.exports = function mentor(msg) {
       .includes(reaction.emoji.name) && member.id === guildMember.id;
     }
     const serverRoles = getServerRoles(msg);
-
     msg.reply(mentorMessage).then((message) => {
       emojiList.forEach(emoji => message.react(emoji));
       message.awaitReactions(filter, { max: 1, time : 60000, errors: ['time']})
