@@ -1,6 +1,6 @@
 const roles = require('../../roles');
 
-module.exports = function(reactionsList, guildMember, rolesList) {
+module.exports = (reactionsList, guildMember, rolesList) => {
   const guildMemberRoles = guildMember.roles._roles;
   reactionsList.forEach(reaction => {
     const role = roles.filter(role => role.emoji === reaction)[0];

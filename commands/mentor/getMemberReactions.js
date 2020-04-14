@@ -1,4 +1,4 @@
-module.exports = function(message, guildMember) {
+module.exports = (message, guildMember) => {
   const messageReactions = message.reactions.cache;  
   const reactions = [];
   messageReactions.forEach(reaction => {

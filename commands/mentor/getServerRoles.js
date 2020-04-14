@@ -1,4 +1,4 @@
-module.exports = function(message) {
+module.exports = (message) => {
   let serverRoles = [];
   message.guild.roles.fetch()
     .then(roles => {
