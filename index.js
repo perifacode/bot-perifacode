@@ -34,7 +34,7 @@ client.on('guildMemberAdd', (member) => {
 });
 
 client.on('message', (msg) => {
-  greetings(msg);
+  greetings(msg, client.user.id);
   coursesAndBooks(msg);
   help(msg);
   github(msg);
