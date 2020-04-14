@@ -44,9 +44,13 @@ const roles = [
 		emoji: '🔟'
 	},
 	{
-		roleName: "mentor",
+		roleName: "mentorear",
 		emoji: '✅'
 	},
+	{
+		roleName: "mentoria",
+		emoji: '🟢'
+	}
 ]
 
 module.exports = roles;
