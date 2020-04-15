@@ -1,6 +1,6 @@
 const { MessageEmbed } = require('discord.js');
 
-module.exports = new MessageEmbed()
+module.exports = (emoji) => new MessageEmbed()
   .setTitle('👩🏽‍💻 Quais os temas das mentorias? 👨🏽‍💻')
   .setDescription(`
     0️⃣ - Front-end
@@ -15,7 +15,8 @@ module.exports = new MessageEmbed()
     9️⃣ - Ruby
     🔟 - DevOps
     
-    ✅ - Pronto
-  `)
-  .setFooter('Criado com 💛 pela comunidade perifaCode')
-  .setColor('#fff200');
+    ${emoji} - Pronto
+
+    `)
+    .setFooter('Criado com 💛 pela comunidade perifaCode')
+    .setColor('#fff200');
