@@ -4,7 +4,7 @@ Esse repositório tem como objetivo criar constantemente funções novas para o 
 
 A linguagem usada aqui é o JavaScript, usando a plataforma NodeJS.
 
-Faça um fork, abra um PR e nos ajude a construir esse robôzinho 😄
+Faça um fork, abra um PR e nos ajude a construir esse robozinho 😄
 
 ---
 
