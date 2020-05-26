@@ -10,6 +10,7 @@ const social = require('./commands/social');
 const bot = require('./commands/bot');
 const site = require('./commands/site');
 const mentor = require('./commands/mentor/mentor');
+const aniversario = require('./commands/aniversario');
 require('dotenv/config');
 
 
@@ -43,6 +44,7 @@ client.on('message', (msg) => {
   site(msg);
   mentor(msg);
   events(msg);
+  aniversario(msg, client.user.id);
 });
 
 client.login(process.env.TOKEN_DISCORD);
