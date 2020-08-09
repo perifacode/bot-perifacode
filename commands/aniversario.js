@@ -8,7 +8,7 @@ module.exports = function niver(msg, botId) {
     msg.channel.send('Aniversário gravado!');
     mongoDB(msg, 'gravar');
     msg.react('🥳');
-  } else if (msg.content === '!buscar') {
+  } else if (msg.content === '!aniversariantes') {
     msg.channel.send('Buscando aniversariantes');
     mongoDB(msg, 'buscar');
     msg.react('🤘');
