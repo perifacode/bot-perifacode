@@ -1,15 +1,10 @@
-const {
-  MongoClient
-} = require('mongodb');
-const {
-  MessageEmbed
-} = require('discord.js');
-
+const { MongoClient } = require('mongodb');
+const { MessageEmbed } = require('discord.js');
 
 module.exports = function mongoDB(msg, argumento) {
-  const zeroFill = n => {
+  const zeroFill = (n) => {
     return ('0' + n).slice(-2);
-  }
+  };
 
   const data = new Date();
   const dia = zeroFill(data.getDate());
@@ -20,10 +15,10 @@ module.exports = function mongoDB(msg, argumento) {
   const aniversario = msg.content.split(' ')[1];
 
   async function main() {
-    const uri = 'mongodb+srv://sergio:sergio@perifacode-gzego.mongodb.net/test?retryWrites=true&w=majority';
+    const uri = process.env.TOKEN_MONGODB;
     const client = new MongoClient(uri, {
       useNewUrlParser: true,
-      useUnifiedTopology: true
+      useUnifiedTopology: true,
     });
 
     try {
@@ -32,12 +27,11 @@ module.exports = function mongoDB(msg, argumento) {
         await createListing(client, {
           _id: usuario.id,
           nome: usuario.username,
-          Aniversario: aniversario
+          Aniversario: aniversario,
         });
       } else if (argumento === 'buscar') {
         await findByDate(client, hoje, msg);
       }
-
     } catch (e) {
       console.error(e);
     } finally {
@@ -46,7 +40,7 @@ module.exports = function mongoDB(msg, argumento) {
   }
 
   main().catch(console.error);
-}
+};
 
 async function createListing(client, newListing) {
   await client.db('Dados').collection('Aniversarios').insertOne(newListing);
@@ -54,16 +48,17 @@ async function createListing(client, newListing) {
 
 async function findByDate(client, date, msg) {
   const cursor = await client.db('Dados').collection('Aniversarios').find({
-    Aniversario: date
+    Aniversario: date,
   });
   const results = await cursor.toArray();
-
 
   if (results.length > 0) {
     const aniversariantes = listaAniversariantes(results);
     const embed = new MessageEmbed()
-      .setTitle('Aniversariantes do dia')
-      .setDescription(`Parabéns aos aniversariantes do dia... frase bonitinha kkkkk \n ${aniversariantes}`)
+      .setTitle('🎈 Aniversariantes do dia 🎈')
+      .setDescription(
+        `${aniversariantes} \n Um feliz aniversário a todos, em nome da perifaCode. ✨💛`,
+      )
       .setFooter('Criado com 💛 pela comunidade perifaCode')
       .setColor('#fff200');
     msg.channel.send(embed);
@@ -79,5 +74,5 @@ function listaAniversariantes(lista) {
 }
 
 function transformMencion(id) {
-  return ('**<@'.concat(id).concat('>**\n'));
+  return '**<@'.concat(id).concat('>**\n');
 }

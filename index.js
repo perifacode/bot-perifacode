@@ -12,23 +12,20 @@ const site = require('./commands/site');
 const mentor = require('./commands/mentor/mentor');
 const aniversario = require('./commands/aniversario');
 require('dotenv/config');
-
-
-client.on('ready', () => {
-  console.log(`Logged in  as ${client.user.tag}`);
-});
-
-
 client.on('guildMemberAdd', (member) => {
-  const channel = member.guild.channels.cache.find((ch) => ch.name === 'bem-vindo');
+  const channel = member.guild.channels.cache.find(
+    (ch) => ch.name === 'bem-vindo',
+  );
   if (!channel) return;
   const embed = new MessageEmbed()
     .setTitle('🎉 Bem Vindo! 🎉')
-    .setDescription(`
+    .setDescription(
+      `
       Seja muito bem vindo ao nosso servidor, ${member}! 
       Aproveite e dê uma olhada no nosso Github e contribua com nossos projetos. 😄
       🔗 http://github.com/perifacode
-      `)
+      `,
+    )
     .setFooter('Criado com 💛 pela comunidade perifaCode')
     .setColor('#fff200');
   channel.send(embed);
