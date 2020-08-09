@@ -1,5 +1,5 @@
 module.exports = function niver(msg, botId) {
-  if (msg.author.id === botId || msg.channel.name !== 'teste-bot') {
+  if (msg.author.id === botId || msg.channel.name !== 'aniversários') {
     return;
   }
   const mongoDB = require('../connections/mongoDB');
