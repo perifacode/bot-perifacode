@@ -62,6 +62,8 @@ async function findByDate(client, date, msg) {
       .setFooter('Criado com 💛 pela comunidade perifaCode')
       .setColor('#fff200');
     msg.channel.send(embed);
+  } else {
+    msg.channel.send('Não temos aniversariantes no dia de hoje! ☺');
   }
 }
 
