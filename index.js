@@ -11,6 +11,7 @@ const bot = require('./commands/bot');
 const site = require('./commands/site');
 const mentor = require('./commands/mentor/mentor');
 const aniversario = require('./commands/aniversario');
+const plantoes = require('./commands/plantoes');
 require('dotenv/config');
 client.on('guildMemberAdd', (member) => {
   const channel = member.guild.channels.cache.find(
@@ -42,6 +43,7 @@ client.on('message', (msg) => {
   mentor(msg);
   events(msg);
   aniversario(msg, client.user.id);
+  plantoes(msg)
 });
 
 client.login(process.env.TOKEN_DISCORD);
