@@ -1,6 +1,6 @@
 module.exports = (message, rolesList) => {
-  const mentorRoles = rolesList.filter(role => role.roleName === 'mentorear' 
-  || role.roleName === 'mentoria');
+  const mentorRoles = rolesList.filter(role => role.roleName === 'mentor' 
+  || role.roleName === 'mentorado');
 
   // processes message
   const processedMessage = message.content.replace('!', '');

@@ -8,7 +8,7 @@ const reactToMessage = require('./reactToMessage');
 const roles = require('../../roles');
 
 module.exports = (msg) => {
-  if (msg.content === '!mentorear' || msg.content === '!mentoria') {
+  if (msg.content === '!mentor' || msg.content === '!mentorado') {
    
     // initial reaction
     reactToMessage(msg, ['🎉', '🎈']);

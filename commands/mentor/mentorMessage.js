@@ -1,7 +1,7 @@
 const { MessageEmbed } = require('discord.js');
 
 module.exports = (emoji) => new MessageEmbed()
-  .setTitle('👩🏽‍💻 Quais os temas das mentorias? 👨🏽‍💻')
+  .setTitle('👩🏽‍💻 Quais os temas que você deseja receber/oferecer mentorias? 👨🏽‍💻')
   .setDescription(`
     0️⃣ - Front-end
     1️⃣ - Back-end

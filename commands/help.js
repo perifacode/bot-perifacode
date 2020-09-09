@@ -19,6 +19,12 @@ module.exports = function help(msg) {
         **!github** - Link para nossos repositórios do Github;
 
         **!bot** - Link para contribuir com nosso robôzinho;
+
+        **!mentorado** - Te destaca como alguém que deseja RECEBER mentoria;
+
+        **!mentor** - Te destaca como alguém que deseja OFERECER mentoria;
+
+        **!plantoes ou !plantao** - Mostra uma lista com o dia e horário dos plantões;
         
       `)
       .setFooter('Criado com 💛 pela comunidade perifaCode')

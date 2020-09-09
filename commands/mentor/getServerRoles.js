@@ -6,7 +6,9 @@ module.exports = (message) => {
   message.guild.roles.fetch()
     .then(roles => {
       serverRoles.push(roles);
+      console.log(serverRoles.cache)
     })
-    .catch(e => console.error(e)); 
+    .catch(e => console.error(e));
+
   return serverRoles;
 }

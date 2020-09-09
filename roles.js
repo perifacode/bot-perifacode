@@ -44,11 +44,11 @@ const roles = [
 		emoji: '🔟'
 	},
 	{
-		roleName: "mentorear",
+		roleName: "mentor",
 		emoji: '✅'
 	},
 	{
-		roleName: "mentoria",
+		roleName: "mentorado",
 		emoji: '🟢'
 	}
 ]

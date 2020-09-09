@@ -5,7 +5,7 @@ module.exports = function site(msg) {
     const embed = new MessageEmbed()
       .setTitle('🌎 Plantões da perifaCode 🌎')
       .setDescription(`
-      👉🏼 Terça (21h30) - PHP
+      👉🏼 Segunda (21h30) - PHP
       👉🏼 Quarta (20h) - Java
       👉🏼 Sexta (20h) - C#
       👉🏼 Domingo (16h) - Javascript
