@@ -44,6 +44,10 @@ const roles = [
 		emoji: '🔟'
 	},
 	{
+		roleName: "gamedev",
+		emoji: '🎮'
+	},
+	{
 		roleName: "mentor",
 		emoji: '✅'
 	},
