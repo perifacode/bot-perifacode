@@ -10,7 +10,6 @@ module.exports = (emoji) => new MessageEmbed()
   .setDescription(`
     ${description}    
     ${emoji} - Pronto
-
     `)
   .setFooter('Criado com 💛 pela comunidade perifaCode')
   .setColor('#fff200');
