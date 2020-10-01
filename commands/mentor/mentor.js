@@ -19,12 +19,9 @@ module.exports = (msg) => {
     msg.reply(mentorMessage(emojiList[emojiList.length - 1])).then((message) => {
       // reacts to message with all emojis from emojiLIst
       reactToMessage(message, emojiList);
-      // awaits for mentor roles emoji reaction
       message.awaitReactions((reaction, member) => reactionsFilter(reaction, member, guildMember), { max: 1, time: 60000, errors: ['time'] })
         .then(() => {
-          // gets all reactions from member
           const reactions = getMemberReactions(message, guildMember);
-          // manages member roles
           manageRole(reactions, guildMember, serverRoles);
           msg.channel.send('🚀Tudo pronto! Clique no seu perfil ( ➡  ➡) para ver os novos cargos! 🚀');
         })

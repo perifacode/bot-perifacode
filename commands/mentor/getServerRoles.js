@@ -1,8 +1,8 @@
 module.exports = (message) => {
-  // creates an empty list
   const serverRoles = [];
 
-  // gets all roles from a messages' guild;
+  // Lógica necessária para buscar todos os roles
+  // em um servidor.
   message.guild.roles.fetch()
     .then((roles) => {
       serverRoles.push(roles);
