@@ -1,13 +1,13 @@
 module.exports = (message) => {
   // creates an empty list
-  let serverRoles = [];
+  const serverRoles = [];
 
   // gets all roles from a messages' guild;
   message.guild.roles.fetch()
-    .then(roles => {
+    .then((roles) => {
       serverRoles.push(roles);
     })
-    .catch(e => console.error(e));
+    .catch((e) => console.error(e));
 
   return serverRoles;
-}
+};
