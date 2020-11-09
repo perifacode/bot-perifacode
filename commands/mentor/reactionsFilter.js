@@ -1,7 +1,4 @@
-module.exports = (reaction, member, guildMember) => {
-  // tries to find ✅ or 🟢 into message reactions
-  // checks for reaction author comparing member.id to
-  // guildMember.id
-  return ['✅', '🟢']
-    .includes(reaction.emoji.name) && member.id === guildMember.id;
-}
+// Filtro que mostra se a pessoa clicou em um dos emojis
+// responsáveis por finalizar o comando.
+module.exports = (reaction, member, guildMember) => ['✅', '🟢']
+  .includes(reaction.emoji.name) && member.id === guildMember.id;

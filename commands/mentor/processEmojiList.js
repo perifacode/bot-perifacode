@@ -1,20 +1,17 @@
 module.exports = (message, rolesList) => {
-  const mentorRoles = rolesList.filter(role => role.roleName === 'mentor' 
+  const mentorRoles = rolesList.filter((role) => role.roleName === 'mentor'
   || role.roleName === 'mentorado');
 
-  // processes message
   const processedMessage = message.content.replace('!', '');
-  
-  // gets correct role emoji
-  const chosenMentorRoleEmoji = mentorRoles.find(role => 
-  role.roleName === processedMessage).emoji;
 
-  // removes "mentor" roles emoji from emojiList
-  const emojiList = rolesList.filter(role => role.emoji !== '✅' && role.emoji !== '🟢')
-  .map(role => role.emoji);
+  // Busca o emoji específico do comando utilizado
+  const chosenMentorRoleEmoji = mentorRoles
+    .find((role) => role.roleName === processedMessage).emoji;
 
-  // pushes correct emoji to emojiList
+  const emojiList = rolesList
+    .filter((role) => role.emoji !== '✅' && role.emoji !== '🟢')
+    .map((role) => role.emoji);
+
   emojiList.push(chosenMentorRoleEmoji);
-
   return emojiList;
-}
+};
