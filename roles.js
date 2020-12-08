@@ -48,6 +48,14 @@ const roles = [
     emoji: '🎮',
   },
   {
+    roleName: 'produtos',
+    emoji: '👨‍💻'
+  },
+  {
+    roleName: 'agile',
+    emoji: '🏃‍♀️'
+  },
+  {
     roleName: 'mentor',
     emoji: '✅',
   },
