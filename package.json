@@ -1,9 +1,9 @@
 {
   "scripts": {
-    "dev": "nodemon src/js/index.js"
+    "dev": "nodemon index.js"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "discord.js": "^12.1.1",
     "dotenv": "^8.2.0",
     "http-parser-js": "^0.5.2",
