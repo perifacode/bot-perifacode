@@ -5,10 +5,11 @@ module.exports = function site(msg) {
     const embed = new MessageEmbed()
       .setTitle('🌎 Plantões da perifaCode 🌎')
       .setDescription(`
-      👉🏼 Segunda (21h30) - PHP
-      👉🏼 Quarta (20h) - Java
+      👉🏼 Segunda (19h) - Empreendedorismo
+      👉🏼 Segunda (21h30) - PHP - EM PAUSA
       👉🏼 Sexta (20h) - C#
-      👉🏼 Domingo (16h) - Javascript
+      👉🏼 Sexta (20H) - Javascript
+      👉🏼 Sábado (16h) - Java - EM PAUSA
 
       ⚠ Caso esteja querendo puxar o plantão de alguma outra linguagem, tecnologia, ou qualquer coisa, entrar em contato com um organizador.
       `)
