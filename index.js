@@ -52,10 +52,11 @@ client.on('message', (msg) => {
 client.login(process.env.TOKEN_DISCORD);
 
 client.on('ready', () => {
+  const ID_CANAL_ANIVERSARIO = ''; // ID DO CANAL ANIVERSARIO (talvez desejar parabens no canal geral)
   const job = new cron.CronJob(
     '00 00 13 * * *',
     async () => {
-      const channel = await client.channels.fetch('713857434711621773'); // ID DO CANAL ANIVERSARIO (talvez desejar parabens no canal geral)
+      const channel = await client.channels.fetch(ID_CANAL_ANIVERSARIO);
       await channel.send('!aniversariantes');
     },
     null,
